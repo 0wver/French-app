@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom iOS-inspired styles */
+@layer components {
+  /* iOS System Material Dark */
+  .ios-material-dark {
+    @apply bg-dark-200/80 backdrop-blur-ios border border-white/5 shadow-ios-dark;
+  }
+  
+  /* iOS System Material Thick Dark */
+  .ios-material-thick-dark {
+    @apply bg-dark-100/90 backdrop-blur-ios-strong border border-white/5 shadow-ios-dark-strong;
+  }
+  
+  /* iOS Glassmorphism */
+  .ios-blur {
+    @apply bg-white/70 backdrop-blur-ios border border-white/20 shadow-ios dark:bg-dark-200/60 dark:border-white/10 dark:shadow-ios-dark;
+  }
+  
+  .ios-blur-strong {
+    @apply bg-white/60 backdrop-blur-ios-strong border border-white/30 shadow-ios-strong dark:bg-dark-200/50 dark:border-white/10 dark:shadow-ios-dark-strong;
+  }
+
+  /* iOS Control Center style card */
+  .ios-control-card {
+    @apply rounded-2xl bg-white/80 backdrop-blur-ios border border-white/30 shadow-ios 
+           dark:bg-dark-200/70 dark:border-white/10 dark:shadow-ios-dark
+           transition-all duration-300;
+  }
+
+  /* iOS Button */
+  .ios-button {
+    @apply rounded-full bg-ios-blue px-6 py-3 text-white font-semibold 
+           shadow-ios-button backdrop-filter backdrop-blur-sm
+           transition-all duration-150 ease-out
+           active:scale-95 active:bg-ios-blue-dark hover:brightness-105;
+  }
+
+  .ios-button-secondary {
+    @apply rounded-full bg-transparent backdrop-blur-ios border border-white/20
+           px-6 py-3 text-ios-gray-600 font-semibold
+           transition-all duration-150 ease-out
+           active:scale-95 active:bg-ios-gray-300/20
+           dark:bg-transparent dark:text-ios-gray-300 dark:border-white/10 dark:hover:text-white;
+  }
+
+  /* iOS Control Center Toggle Button */
+  .ios-toggle {
+    @apply rounded-2xl bg-white/90 backdrop-blur-ios p-3 
+           border border-white/40 shadow-ios flex flex-col items-center justify-center
+           transition-all duration-300 active:scale-95
+           dark:bg-dark-300/80 dark:border-white/10 dark:shadow-ios-dark;
+  }
+  
+  .ios-toggle.active {
+    @apply bg-ios-blue/90 border-ios-blue/40 text-white;
+  }
+
+  /* iOS Card */
+  .ios-card {
+    @apply rounded-xl bg-white shadow-ios p-5 
+           transition-all duration-300
+           dark:bg-dark-200 dark:shadow-ios-dark;
+  }
+
+  /* iOS Card with glassmorphism */
+  .ios-card-blur {
+    @apply rounded-xl bg-white/80 backdrop-blur-ios shadow-ios p-5 
+           border border-white/20
+           transition-all duration-300
+           dark:bg-dark-200/80 dark:border-white/10 dark:shadow-ios-dark;
+  }
+
+  /* iOS Widget Card */
+  .ios-widget {
+    @apply rounded-xl bg-white/80 backdrop-blur-ios shadow-ios p-4 
+           border border-white/30
+           transition-all duration-300
+           dark:bg-dark-200/70 dark:border-white/5 dark:shadow-ios-dark;
+  }
+
+  /* iOS Input */
+  .ios-input {
+    @apply rounded-lg bg-ios-gray-100 border-none px-4 py-3 
+           shadow-ios-inner
+           focus:outline-none focus:ring-2 focus:ring-ios-blue
+           dark:bg-dark-300 dark:text-white;
+  }
+
+  /* iOS Navigation */
+  .ios-nav {
+    @apply fixed top-0 left-0 right-0 
+           bg-white/80 backdrop-blur-ios z-50 
+           border-b border-[#E0E0E0]/50
+           transition-colors duration-300
+           dark:bg-dark-100/80 dark:border-white/5;
+  }
+
+  /* iOS Progress Bar */
+  .ios-progress-bar {
+    @apply h-2 rounded-full bg-ios-gray-200/70 overflow-hidden dark:bg-dark-400/50;
+  }
+
+  .ios-progress-bar-fill {
+    @apply h-full bg-ios-blue rounded-full transition-all dark:bg-[#0A84FF];
+  }
+  
+  /* iOS Slider */
+  .ios-slider {
+    @apply w-full h-2 rounded-full bg-ios-gray-200 overflow-hidden relative
+           dark:bg-dark-400/50;
+  }
+  
+  .ios-slider-fill {
+    @apply h-full bg-ios-blue rounded-full transition-all absolute left-0 top-0 dark:bg-[#0A84FF];
+  }
+  
+  .ios-slider-thumb {
+    @apply h-5 w-5 rounded-full bg-white border-2 border-ios-blue
+           absolute top-1/2 transform -translate-y-1/2
+           shadow-ios-button
+           transition-all duration-150
+           dark:bg-dark-100;
+  }
+  
+  /* iOS ghost button */
+  .ios-button-ghost {
+    @apply rounded-full bg-transparent border border-[#D4D4D8] 
+           px-6 py-3 text-[#D4D4D8] font-semibold
+           transition-all duration-150 ease-out
+           active:scale-95 hover:text-white hover:border-white
+           dark:border-[#D4D4D8] dark:text-[#D4D4D8];
+  }
+  
+  /* iOS pill button */
+  .ios-button-pill {
+    @apply rounded-full bg-ios-blue px-3 py-1.5 text-xs text-white font-medium
+           shadow-sm transition-all duration-150 ease-out
+           active:scale-95 active:bg-ios-blue-dark hover:brightness-105
+           dark:bg-[#0A84FF];
+  }
+}
+
+/* Animation and transition utilities */
+@layer utilities {
+  .transition-ios {
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition-duration: 300ms;
+    animation-fill-mode: forwards;
+  }
+  
+  .animate-ios-spring {
+    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+    transition-duration: 300ms;
+    animation-fill-mode: forwards;
+  }
+  
+  .ios-depth-1 {
+    @apply shadow-ios;
+  }
+  
+  .ios-depth-2 {
+    @apply shadow-ios-strong;
+  }
+  
+  .ios-blur-bg {
+    @apply bg-white/70 backdrop-blur-ios dark:bg-dark-100/70;
+  }
+
+  .ios-blur-thick-bg {
+    @apply bg-white/60 backdrop-blur-ios-strong dark:bg-dark-100/90;
+  }
+  
+  .ios-control-bg {
+    background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.75) 100%);
+    backdrop-filter: blur(20px);
+  }
+  
+  .dark .ios-control-bg {
+    background: linear-gradient(180deg, rgba(44,44,46,0.85) 0%, rgba(28,28,30,0.75) 100%);
+    backdrop-filter: blur(20px);
+  }
+  
+  /* Subtle hover effects for buttons */
+  .hover-lift {
+    @apply transition-all duration-150 hover:translate-y-[-2px] hover:shadow-ios-strong;
+  }
+  
+  /* Text colors for dark mode */
+  .dark-text-primary {
+    @apply text-white;
+  }
+  
+  .dark-text-secondary {
+    @apply text-[#D4D4D8];
+  }
+  
+  .dark-text-tertiary {
+    @apply text-[#E0E0E0];
+  }
+  
+  /* Blinking cursor animation for typing effect */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .animate-blink {
+    animation: blink 0.85s infinite;
+    animation-fill-mode: forwards;
+  }
+}
