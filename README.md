@@ -1,6 +1,6 @@
-# Learn German - iOS Inspired
+# Learn French - iOS Inspired
 
-A modern, interactive German language learning platform built with React and styled with an iOS design language.
+A modern, interactive french language learning platform built with React and styled with an iOS design language.
 
 ## Features
 
